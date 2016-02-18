@@ -6,6 +6,7 @@ RUN yum install -y epel-release \
  && yum clean all
 
 ADD start.sh /start.sh
+RUN chmod +x /start.sh
 
 ENV VCL_CONFIG=/etc/varnish/default.vcl CACHE_SIZE=64m VARNISHED_PARAMS="-p default_ttl=3600 -p default_grace=3600"
 EXPOSE 80
